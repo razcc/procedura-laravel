@@ -5,7 +5,7 @@
 2. ```composer require laravel/ui:^2.4
 3. ```php artisan ui vue --auth
 4. ```npm i
-5. Modifichiamo il file .env
+5. Modifichiamo il file 📁.env
 6. ```php -S localhost:8000 -t public
 7. Su un altro terminale: 
     ```npm run dev && npm run watch
@@ -24,8 +24,8 @@
             return view('guest.home');
         })->where("any", ".*");
 
-10. Modifico il file: RouteServiceProvider.php in: public const HOME = '/admin';
-11. Modifico il nuovo home controller, percorso Admin/HomeController, in:
+10. Modifico il file: 📁RouteServiceProvider.php in: public const HOME = '/admin';
+11. Modifico il nuovo home controller, percorso 📁Admin/HomeController, in:
 
     ```
     class HomeController extends Controller
@@ -37,7 +37,7 @@
         }
     }
 
-12. Creiamo il file home.blade per la pagina di frontoffice in questo percorso: "resources/views/guest/home.blade.php"
+12. Creiamo il file home.blade per la pagina di frontoffice in questo percorso: 📁"resources/views/guest/home.blade.php"
     struttura tipo:
     ```
     <!DOCTYPE html>
@@ -60,7 +60,7 @@
 
     </html>
 
-13. Creiamo la views App.vue nel percorso: "resources/js/views/App.vue" 
+13. Creiamo la views App.vue nel percorso: 📁"resources/js/views/App.vue" 
 
     struttura tipo:
     ```
@@ -80,7 +80,7 @@
 
     </style>
 
-14. Attiviamo il rendering del file App.vue in questo percorso: "resources/js/app.js"
+14. Attiviamo il rendering del file App.vue in questo percorso: 📁"resources/js/app.js"
     struttura tipo:
     ```
     require('./bootstrap');
