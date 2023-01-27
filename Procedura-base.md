@@ -191,3 +191,17 @@
 2. Creazione model, controller normale, migration, seeder con shortcut
     ``` php artisan make:model Models/Pasta -msc
 
+
+
+## Yeld, @section, Extends
+1. Extends, serve quando si vogliono usare pezzi di codice come i componenti, fatti e finiti che saranno tutti uguali in ognu pagina dove li importo con Extends
+
+2. YELD, viene usato in specifiche sezioni del LAYOUT, cosi che quando si richiama quel layoutsi possa modificare dinamicamente quella parte di yeld, e farla diversa ogni volta che si richiama quel layout
+    ``` @yield('nomeYeld')
+
+3. SECTION serve a richiamare gli yeld dinamici
+    ```
+    @section('nomeYeld')
+        Contenuto
+
+    @endsection
