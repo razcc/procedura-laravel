@@ -271,6 +271,7 @@ Da inserire dentro alla classe dell'input stesso:
             ]
         );
     }
+
 7. Fare l'update dei dati con la funzione specifica update, come paramentro la var con i dati del form della edit, subito sotto la validation:
     ``` $singolo_post->update($data);
 8. Faccio il redirect subito dopo:
@@ -295,6 +296,8 @@ Da inserire dentro alla classe dell'input stesso:
     }
 
 2. 
+
+
 
 
 
