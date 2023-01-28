@@ -259,7 +259,7 @@ Da inserire dentro alla classe dell'input stesso:
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        singolo_post = Post::findOrFail($id);
+        $singolo_post = Post::findOrFail($id);
         $request->validate(
             [
                 'title' => 'required|max:50',

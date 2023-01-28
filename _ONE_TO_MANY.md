@@ -1,7 +1,7 @@
 
 ??Chiedere stampa del with collegamento Post category, perchè ho docuto aggiungere ?? ''
-
-
+??Chiedere come vanno scritti i nomi nella tabella di aggiornamento
+?? Chiedere per il collegamento con user table, come avere l'id del user loggato, e stamparlo in post, nella colonna creata
 ## ONE_TO_MANY
 Prendiamo in considerazione deu tabelle Post e Category
 1. Partire dal avere le due tabelle da mettere in riferimento
@@ -131,7 +131,7 @@ Oppure alternativa 2, giocare con l'if, se esiste quell'array all'interno allora
         <option value="{{ $elem['id'] }}"  {{ $elem['id'] == old('category_id' , $post['category_id']) ? 'selected' : ''  }}>{{ $elem['name'] }}</option>
     @endforeach
 
-
+3. Update è gia apposto
 
 
 
