@@ -1,3 +1,7 @@
+
+??Chiedere stampa del with collegamento Post category, perchè ho docuto aggiungere ?? ''
+
+
 ## ONE_TO_MANY
 Prendiamo in considerazione deu tabelle Post e Category
 1. Partire dal avere le due tabelle da mettere in riferimento
@@ -59,18 +63,73 @@ Nel modello Post, la funzione sara <!-- pubblic function category(){}--> ... nel
     }
 9. php artisan:migrate
 
+## Create e Edit
+## Create
+1. Alla creazione di un post e alla sua modifica, l'utente deve essere in grado di associargli una categoria, quindi dobbiamo passargli l'informazione di un'altra tabella e non solo dei post
 
 
 
+2. Alla create nella function del controller risorsa, andiamo a passare le informazioni di categories, tramite il compact
+3. Nella view create creiamo una select a cui passiamo dinamicamente tutte le cattegorie
+Il name della select prende il nome della colonna, e la option deve avere il value che andra a riempire la colonna della fk
+    
+    ```
+    <label>Categorie</label>
+    <select name="category_id">
+        <option value="">Seleziona la categoria</option>
+        @foreach ($categories as $elem)
+            <option value="{{ $elem['id'] }}">{{ $elem['name'] }}</option>
+        @endforeach
+    </select>
+
+4. Devo aggirnare la store
+5. Nella function store, ricordarsi di aggiornare la funzione fill (all'interno del model)
+
+6. IMPORTANTE !! 
+7. Ora nella tabella principale abbiamo la possibilita di stamparci a schermo l'id della fk, quindi l'id della tabella legata a Post, ma siccome all'utente non interessa vedere un id, ma un nome che è legato a quel id (in questo caso il nome della category table, legato al id di ogni riga), abbiamo l'ausilio di laravel, con una funzione specifica ALL() ci permette di estrappolare tutti i dati della tabella, ma nel caso in cui questa tabella abbiam una fk, come per i Posts hanno la fk di Category, laravel ci mette a disposizione una funzione with(), da usare al posto di all(), che prende tutte le informazioni della tabella principale, e in aggiunta, sottobanco, capisce che c'è un collegamento grazie alla fk, e si prende tutte le colonne della tabella associata.
+
+8. Nella funzione index del controller risorsa: come parametro di with(), inserisco il nome della funzione che crea il legame, alll'interno del Model della tabella che ha il fk
+    ```
+    public function index()
+    {
+        $posts = Post::with('category')->paginate(10);
+
+        return view('admin.post.index', compact('posts'));
+    }
+
+9. Nella pagina per stampare il valore name, associato alla fk, diventa un array dentro un array, A laravel non piace dover stampare una colonna se è Null e si hanno problemi, allora aggiungere ?? '' ala fine
+    ```
+    <td>{{ $post['category']['name']?? ''}}</td>
+Oppure alternativa 2, giocare con l'if, se esiste quell'array all'interno allora stampa il suo valore se è null non fa niente
+    
+    @if ($post->category)
+        {{ $post['category']['name']}}
+    @endif
 
 
 
+## Edit
+1. Nella function edit del controller risorsa, passare tutti i dati delle category, che devo aggiungere alla tabela posts
 
+2. Nella view creare la select come nella create, identica
+    
+    <div class="mb-3">
+        <label>Categorie</label>
+        <select class="form-controll" name="category_id">
+            <option value="">Seleziona la categoria</option>
 
+            @foreach ($categories as $elem)
+                <option value="{{ $elem['id'] }}">{{ $elem['name'] }}</option>
+            @endforeach
+        </select>
+    </div>
 
-
-
-
+3. Per avere nella select gia selezionata, l'opzione originale, quindi quella che gia aveva selezionato in precedenza e che ora noi vogliamo modificare , si usa un ternario
+    Se l'id dell'elento che voglio stampare è uguale all'id presente dentro alla tabella con la fk, aggingo selected altrimenti niente
+    ```
+    @foreach ($categories as $elem)
+        <option value="{{ $elem['id'] }}"  {{ $elem['id'] == old('category_id' , $post['category_id']) ? 'selected' : ''  }}>{{ $elem['name'] }}</option>
+    @endforeach
 
 
 
