@@ -1,7 +1,7 @@
 ## Inizio Nuovo progetto
 
 
-1. ``` composer create-project --prefer-dist laravel/laravel:^7.0 35-laravel7-crud-university-auth-vue2
+1. ``` composer create-project --prefer-dist laravel/laravel:^7.0 "Nome progetto"
 2. ```composer require laravel/ui:^2.4
 3. ```php artisan ui vue --auth
 4. ```npm i
