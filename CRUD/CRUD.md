@@ -11,6 +11,9 @@ DA CHIEDERE A COSA SERVED il with nel update function durante il redirect
 
         //CONTROLLER RISORSA
         Route::resource('/posts', postsController::class); 
+
+        Opure
+
     });
 3. Creare la strutturain cartelle nelle views 📁
     ```
@@ -135,6 +138,7 @@ e fare il return diella view index
 3. Nel controller risorse, nella function create, fare la return della view create
 4. Compilare la SOTORE
 
+
 ## STORE
 1. Nel controller risorsa, fuunction store, Salvare in una variabile tutti i valori inviati dal form, tramite parameto request della funzione store, abbinaa a funzione propria di laravel all();
     ```
@@ -168,7 +172,6 @@ e fare il return diella view index
             public function store(Request $request)
             {
                 $var = $request->all();
-
                 $new_record = new Post();
                 $new_record->fill($var);
                 $new_record->save();
@@ -228,7 +231,6 @@ Da inserire dentro alla classe dell'input stesso:
     public function edit($id)
     {
         $post = NomeModello::findOrFail($id);
-
         return view('admin.post.edit', compact('post'));
     }
 3. Nella view edit.blade.php, estendere il layout e creare un Form, ch avra gli input precompilati dai valori preesistenti nel dataBase
@@ -239,6 +241,7 @@ Da inserire dentro alla classe dell'input stesso:
     @csrf
     @method('PUT')
 
+## Update
 6. Nella Function Update, ci salviamo i valori inviati dal form edit, tramite il paramentro $request
     ```
     public function update(Request $request, $id)
@@ -274,6 +277,7 @@ Da inserire dentro alla classe dell'input stesso:
 
 7. Fare l'update dei dati con la funzione specifica update, come paramentro la var con i dati del form della edit, subito sotto la validation:
     ``` $singolo_post->update($data);
+
 8. Faccio il redirect subito dopo:
     ```return redirect()->route('admin.posts.index');
 
@@ -294,36 +298,6 @@ Da inserire dentro alla classe dell'input stesso:
         $data->delete();
         return redirect()->route('admin.posts.index');
     }
-
-2. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
