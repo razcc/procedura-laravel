@@ -1,17 +1,18 @@
 ## Carbon 
 1. Serve a sistemare le date, di base phpMyAdmin ha un fusoOrario prestabilito che è americano, carbon ci permette di gestire le date nel modo che preferiamo
 
-2. Comando:
-    ``` composer require nesbot/carbon
+2. 
+    ``` composer require nesbot/carbon ```
 
 3. Nel posto dove voglio usare carbon uso:
-    use Carbon\Carbon;
+   ```  use Carbon\Carbon; ```
 
 <!--! TIMEZONE fuso Orario -->
 4. Andiamo nella cartella confic in app.php, cerchiamo timezone, e modifichiao da UTC a Europe/Rome 
-    'timezone' => 'Europe/Rome',
+    ``` 'timezone' => 'Europe/Rome', ```
 
-5. Link per le time zone: https://www.w3schools.com/php/php_ref_timezones.asp#europe
+5. Link per le time zone: 
+        https://www.w3schools.com/php/php_ref_timezones.asp#europe
 
 6. Dopo aver modificato un fiile nella cartella confiuc bisogna ripulire la cache
     <!-- php artisan config:clear -->
@@ -22,7 +23,7 @@
     <!-- 'timezone' => 'env('APP_TIMEZONE', 'UTC')', -->
     Primo parametro serve a dire cosa deve cercare nel file .env,il secondo è cosa deve applicare nel caso nel .env non ci sia niente
 
-9. Andare nel file .env e creare una nuova chiave il APP_TIMEZONE
+9.  Andare nel file .env e creare una nuova chiave il APP_TIMEZONE
     APP_TIMEZONE = 'Europe/Rome'
 
 
