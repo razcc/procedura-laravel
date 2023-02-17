@@ -67,37 +67,34 @@
 
 13. Creiamo la views App.vue nel percorso: 📁"resources/js/views/App.vue" 
 
-    struttura tipo:
-    ```
-    <template>
-        <div>
+        <template>
+            <div>
 
-        </div>
-    </template>
+            </div>
+        </template>
 
-    <script>
-        export default {
-            name:"App",
-        }
-    </script>
+        <script>
+            export default {
+                name:"App",
+            }
+        </script>
 
-    <style lang="scss" scoped>
+        <style lang="scss" scoped>
 
-    </style>
+        </style>
 
 14. Attiviamo il rendering del file App.vue in questo percorso: 📁"resources/js/app.js"
-    struttura tipo:
-    ```
-    require('./bootstrap');
-    window.Vue = require('vue');
 
-    // importiamo il componente App
-    import App from './views/App';
+        require('./bootstrap');
+        window.Vue = require('vue');
 
-    const app = new Vue({
-        el: '#root',
-        render: h => h(App), // renderizziamo App all'avvio di Vue
-    });
+        // importiamo il componente App
+        import App from './views/App';
+
+        const app = new Vue({
+            el: '#root',
+            render: h => h(App), // renderizziamo App all'avvio di Vue
+        });
 
 15. Da qui in poi possiamo tornare a dedicarci al backend come abbiamo sempre fatto e sucessivamente gestire qua le pagine
 che non richiedono il login, con la solita struttura a componenti di vue
