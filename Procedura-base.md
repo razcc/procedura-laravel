@@ -145,44 +145,47 @@
             return view('pages.show', compact('prodotto_singolo'));
         })->name('show.pasta');
 
-2. Per ogni elemento stampato dal ciclo foreach, creo un link che richiami la rotta della singola pagina e che passi il dato univoco che permetterà di recuperare il record:
+2. Per ogni elemento stampato dal ciclo foreach, creo un link che richiami la rotta della singola pagina e che passi il dato univoco che permetterà di recuperare il record: <br>
     ``` <a href="{{ route('show.pasta', compact('key') ) }}"> ```
 
 3. Creo la view che stamperà i dati del singolo record creato: "views/pages/show.blade.php"
-    ```
-    @extends('layouts.app')
+    
+        @extends('layouts.app')
 
-    @section('page-title', "Title")
+        @section('page-title', "Title")
 
-    @section('main-content')
-        <h2>Prodotto: {{ $prodotto_singolo['titolo'] }}</h2>
-    @endsection
+        @section('main-content')
+            <h2>Prodotto: {{ $prodotto_singolo['titolo'] }}</h2>
+        @endsection
 
 
 
 ## MIGRATION
-1. ``` php artisan make:migration create_nomeTabellaPlurale_table (nome tabella deve essere in minuscolo)
-2. Compilo il file generato nella cartella 📁database>migrations con le rispettive colonne di cui avrò bisogno al suo interno,
-   facendo attenzione al tipo di dato che sceglierò di utilizzare in fase di riempimento
-3. Terminata la compilazione lancio il comando:
-    ``` php artisan migrate
+1. Il nome della tabella deve essere in minuscolo e plurale: <br>
+    ``` php artisan make:migration create_nomeTabellaPlurale_table ``` 
 
-4. Tornare indietro di un passaggio con le migration
-    ``` php artisan migrate:rollback
+2. Compilo il file generato nella cartella 📁database>migrations con le rispettive colonne di cui avrò bisogno al suo interno, facendo attenzione al tipo di dato che sceglierò di utilizzare in fase di riempimento
+3. Terminata la compilazione lancio il comando: <br>
+    ``` php artisan migrate ```
 
-5. Ricarico da zero tutte le migration svuotandole
-    ``` php artisan migrate:refresh
+4. Tornare indietro di un passaggio con le migration <br>
+    ``` php artisan migrate:rollback ```
+ 
+5. Ricarico da zero tutte le migration svuotandole <br>
+    ``` php artisan migrate:refresh ```
 
 
 ## SEEDER
-1. ``` php artisan make:seeder NomeSeeder
+1. ``` php artisan make:seeder NomeSeeder ```
+
 2. Compila la funzione interna "run" con ad esempio un array multidimensionale che ciclerò per creare diverse istanze in base a quanti dati fittizi ho creato all'interno dell'array multidimensionale
 
 3. Lanciare il seeder
-    ``` php artisan db:seed --class=HousesTableSeeder
-    ``` Metodo 2: Compilo il file DatabaseSeeder con il nome del file seeder che ho creato
-        e compilato e poi lancio il comando da terminale: 
-    ``` php artisan db:seed
+    #### Metodo 1
+    ``` php artisan db:seed --class=HousesTableSeeder ```
+    #### Metodo 1
+    - Compilo il file DatabaseSeeder con il nome del file seeder che ho creato e poi lancio il comando da terminale:  <br>
+    ``` php artisan db:seed ```
 
 
 ## SHORTCUT
