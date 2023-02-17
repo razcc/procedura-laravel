@@ -30,7 +30,7 @@
 2. Creiamo dentro il progetto un nuovo file 📃 .env
 3. Copiamo e incolliamo dentro il file 📃 .env il contenuto di .env.example
 
-4. Apriamo il terminale nel progetto e lanciamo il comando:
+4. Apriamo il terminale nel progetto e lanciamo il comando: <br>
     ``` composer install ``` <br>
      // Se escono errori passiamo al comando: <br>
      ``` composer update ``` 
@@ -40,8 +40,8 @@
 
 
 ## Bootstrap
-1. Lanciare il comando se non ancora fatto: 
-    ```npm i
+1. Lanciare il comando se non ancora fatto: <br>
+    ```npm i ```
 2. Poi:
     ```npm i npm install bootstrap
     ``` npm i @popperjs/core
