@@ -20,7 +20,7 @@
 ### Secondo Metodo
 8. Anziche modificare direttamente la timeZone del file app.php della cartella config, al suo interno creiamo un collegamento al file .env      
 
-    ``` 'timezone' => 'env('APP_TIMEZONE', 'UTC')', ```
+    ``` 'timezone' => 'env('APP_TIMEZONE', 'UTC')', ``` <br>
     //Primo parametro serve a dire cosa deve cercare nel file .env,il secondo è cosa deve applicare nel caso nel .env non ci sia niente
 
 9.  Andare nel file .env e creare una nuova chiave il APP_TIMEZONE
