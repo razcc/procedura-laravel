@@ -114,16 +114,16 @@
 ## ACTIVE MENU
 1. Nelle nav bisogna realizzare un ternario che legge il "name" delle diverse rotte associate alle voci del menu:
     
-    <header>
-            <ul>
-                <li>
-                    <a class="{{ Request::route()->getName() == 'all_books' ? 'active' : '' }}" href="{{route('all_books')}}">Home</a>
-                </li>
-                <li>
-                    <a class="{{ Request::route()->getName() == 'about' ? 'active' : '' }}" href="{{route('about')}}">About</a>
-                </li>
-            </ul>
-    </header>
+        <header>
+                <ul>
+                    <li>
+                        <a class="{{ Request::route()->getName() == 'all_books' ? 'active' : '' }}" href="{{route('all_books')}}">Home</a>
+                    </li>
+                    <li>
+                        <a class="{{ Request::route()->getName() == 'about' ? 'active' : '' }}" href="{{route('about')}}">About</a>
+                    </li>
+                </ul>
+        </header>
 
 
 ## SHOW BASE (NO Crud, NO Controller)
