@@ -176,10 +176,12 @@ Creo nuovo record, e compilo una per una le colonne della tabella, direttamente 
 Creo nuovo record, e uso la funzione fill con parametro la variabile con i dati. Questo è possibile se prima vado nel modello che controlla questa specifica tabella su cui sto lavorando e gli aggiungo il protected fillable: 
 
     - Espressione da mettere nel modello
+        ```
         protected $fillable = [
             'NomeColonna1',
             'NomeColonna2'
         ];
+        ```
     - Espressione da mettere nel controllere store: 
         public function store(Request $request)
         {
