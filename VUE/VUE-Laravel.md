@@ -34,7 +34,6 @@
 
 11. Modifico il nuovo home controller, percorso 📁Admin/HomeController, in:
 
-    
         class HomeController extends Controller
 
         {
@@ -45,27 +44,26 @@
         }
 
 12. Creiamo il file home.blade per la pagina di frontoffice in questo percorso: 📁"resources/views/guest/home.blade.php"
-    struttura tipo:
-    ```
-    <!DOCTYPE html>
-    <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Guest Home</title>
-    </head>
+        <!DOCTYPE html>
+        <html lang="en">
 
-    <body>
-        <!-- inseriamo un unico div #root a cui si aggancerà vue -->
-        <div id="root"> </div>
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <meta http-equiv="X-UA-Compatible" content="ie=edge">
+                <title>Guest Home</title>
+            </head>
 
-        <!-- colleghiamo il file js -->
-        <script src="{{ asset('js/app.js') }}" charset="utf-8"></script>
-    </body>
+            <body>
+                <!-- inseriamo un unico div #root a cui si aggancerà vue -->
+                <div id="root"> </div>
 
-    </html>
+                <!-- colleghiamo il file js -->
+                <script src="{{ asset('js/app.js') }}" charset="utf-8"></script>
+            </body>
+
+        </html>
 
 13. Creiamo la views App.vue nel percorso: 📁"resources/js/views/App.vue" 
 
