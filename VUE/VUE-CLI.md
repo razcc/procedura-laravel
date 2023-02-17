@@ -10,6 +10,7 @@
 ## BOOTSTRAP
 1. 
     ``` npm install bootstrap@5.2.3 ```
+
 2. All'interno del file 📃"main.js" scrivo i due codici:
     <code> 
         import 'bootstrap/dist/css/bootstrap.min.css' 
@@ -19,8 +20,10 @@
 ## AXIOS
 1. 
     ``` npm install axios ```
+
 2. All'interno del file .vue dove vogliamo utilizzare axios, inseriamo l'import:
     ``` import axios from 'axios' ```
+
 3. utilizzo poi axios all'interno del componente dove l'ho importato,
     all'interno di mounted() created() se vogliamo fare un caricamnto delle api al' caricamento della pagina,
     oppure all'interno di method() se vogliamo richiamarla come funzione e poi utilizzarla in base alla necessità
@@ -31,9 +34,11 @@ Tutti i comandi sono presetni nell documentazione di fA
     ``` npm i --save @fortawesome/fontawesome-svg-core ```
 
 2. 
-   ``` npm i --save @fortawesome/free-solid-svg-icons   
-    npm i --save @fortawesome/free-regular-svg-icons 
-    npm i --save @fortawesome/free-brands-svg-icons  ```
+   <code>
+        npm i --save @fortawesome/free-solid-svg-icons   
+        npm i --save @fortawesome/free-regular-svg-icons 
+        npm i --save @fortawesome/free-brands-svg-icons
+    </code>
 
 3. ``` npm i --save @fortawesome/vue-fontawesome@latest-2
 4. Aprire poi il file main.js e scrivere all'interno:
