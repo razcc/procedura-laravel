@@ -3,36 +3,40 @@
 ## GIT
 1. ``` composer create-project --prefer-dist laravel/laravel:^7.0 [NOME PROGETTO] ```
 2. Collegamento a GIT
-    ```
+    
         git add -A 
         git commit -m " Testo del commit " 
         git branch -M main
         git remote add origin .........URL DELLA REPO........
         git push -u origin main
-    ```
+    
 ## SASS
-1. ``` npm i
-2. ``` npm run dev
-3. ``` npm run watch
+1. ``` npm i ```
+2. ``` npm run dev ```
+3. ``` npm run watch ```
+   
 4. Per gestire gli url delle immagini caricate in sass, modificare il file 📃 webpack.mix.js aggiungendo le options i1. questo modo:
-    ```
-    mix.js('resources/js/app.js', 'public/js')
-        .sass('resources/sass/app.scss', 'public/css')
-        .options({
-        processCssUrls: false});
+    
+        mix.js('resources/js/app.js', 'public/js')
+            .sass('resources/sass/app.scss', 'public/css')
+            .options({
+            processCssUrls: false});
 
-5. ``` php artisan serve
+5. ``` php artisan serve ```
 
 
 ## Clonazione da GIT un Progetto Laravel Già avviato
 1. Apriamo il progetto con VS Code
 2. Creiamo dentro il progetto un nuovo file 📃 .env
 3. Copiamo e incolliamo dentro il file 📃 .env il contenuto di .env.example
+
 4. Apriamo il terminale nel progetto e lanciamo il comando:
-    ``` composer install ( Se escono errori passiamo al comando: composer1. update )
-5. ``` php artisan key:generate
-6. ``` npm install
-7. ``` php artisan serve
+    ``` composer install ``` <br>
+     // Se escono errori passiamo al comando: <br>
+     ``` composer update ``` 
+5. ``` php artisan key:generate ```
+6. ``` npm install ```
+7. ``` php artisan serve ```
 
 
 ## Bootstrap
