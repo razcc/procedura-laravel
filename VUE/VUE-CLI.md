@@ -29,7 +29,6 @@
     oppure all'interno di method() se vogliamo richiamarla come funzione e poi utilizzarla in base alla necessità
 
 ## FONTAWESOME
-Tutti i comandi sono presetni nell documentazione di fA
 1. 
     ``` npm i --save @fortawesome/fontawesome-svg-core ```
 
