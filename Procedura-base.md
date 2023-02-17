@@ -45,77 +45,75 @@
 2. Poi: <br>
     ``` npm i npm install bootstrap ```
     ``` npm i @popperjs/core ```
-3. Aprire il file 📃app.scss e inserire:
+3. Aprire il file 📃app.scss e inserire: <br>
     ``` @import '~bootstrap/dist/css/bootstrap.min.css'; ```
 
 4. Andare nel file app.js nella cartella resources e inserire:
-    ```
-    import '../../node_modules/@popperjs/core/dist/umd/popper.min.js';
-    import 'bootstrap/js/dist/dropdown';
+    
+        import '../../node_modules/@popperjs/core/dist/umd/popper.min.js';
+        import 'bootstrap/js/dist/dropdown';
 
-5. Lanciare da terminale il comando (per generare files css e js nella cartella public): 
-    ``` npm run dev
+5. Lanciare da terminale il comando (per generare files css e js nella cartella public): <br>
+    ``` npm run dev ```
+
 6. Creare nella view del layout il collegamento ai file:
 
-    ```
-    <link rel="stylesheet" href=" {{ asset('css/app.css') }} ">
-    <script src=" {{ asset('js/app.js') }} "></script>
+        <link rel="stylesheet" href=" {{ asset('css/app.css') }} ">
+        <script src=" {{ asset('js/app.js') }} "></script>
 
-7. Rilanciare d azero il comando da terminale: 
-    ``` npm run watch
+7. Rilanciare d azero il comando da terminale: <br>
+    ``` npm run watch ```
+
 8. Usare le classi di bootstrap 5 nelle views
 
 
 ## Node Modules
-1. ``` npm install
+1. ``` npm install ```
 
 
 ## Route List 
-1. ```  php artisan route:list
+1. ```  php artisan route:list ```
 
 
 ## MODEL
 1. Deve essere scritto in PascalCase e al singolare e deve essere la versione singolare del nome della tabella del DB in inglese
-2. ``` php artisan make:model Models/NomeModello
+2. ``` php artisan make:model Models/NomeModello ```
 
 
 ## CONTROLLER
 1. Deve essere scritto in PascalCase e al singolare
-2. ``` php artisan make:controller NomeController
+2. ``` php artisan make:controller NomeController ```
 
 ## Controller RISORSA
-1. ``` php artisan make:controller PastaController --resource
-2. scrittura in web.php di un controller risorsa
-    ``` Route::resource('/pastas', PastaController::class);
+1. ``` php artisan make:controller PastaController --resource ```
+2. scrittura in web.php di un controller risorsa <br>
+    ``` Route::resource('/pastas', PastaController::class); ```
 
 
 ## QUERY
-1. ALL:
+1. ALL:    
+        public function index(){
 
-    ```
-    public function index(){
+            // 'select * from books'
+            $var = NomeModello::all();
 
-        // 'select * from books'
-        $var = NomeModello::all();
-
-        return view('welcome', compact('var') );
-    }
+            return view('welcome', compact('var') );
+        }
 
 2. WHERE:
 
-    ```
-    public function index(){
+        public function index(){
 
-        //filtraggio elementi
-        $valori_filtrati = NomeModello::where('title', 'Like', 'L%')->get();
+            //filtraggio elementi
+            $valori_filtrati = NomeModello::where('title', 'Like', 'L%')->get();
 
-        return view('welcome', compact('valori_filtrati') );
-    }
+            return view('welcome', compact('valori_filtrati') );
+        }
 
 
 ## ACTIVE MENU
 1. Nelle nav bisogna realizzare un ternario che legge il "name" delle diverse rotte associate alle voci del menu:
-    ```
+    
     <header>
             <ul>
                 <li>
