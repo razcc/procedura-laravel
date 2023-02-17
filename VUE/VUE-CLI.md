@@ -13,7 +13,6 @@
 2. All'interno del file 📃"main.js" scrivo i due codici:
     <code> 
         import 'bootstrap/dist/css/bootstrap.min.css' 
-        <br>
         import 'bootstrap/dist/js/bootstrap.min.js' 
     </code>
 
