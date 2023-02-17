@@ -62,8 +62,8 @@
     </code>
 
 5. ATTENZIONE: se la stessa icona viene importata con due stili diversi ad esempio: regular e solid,
-   non possiamo usare lo stesso nome per le due icone ma dobbiamo usare un rieticchetamento con "as", il codice diverrà:
-    <code>
+non possiamo usare lo stesso nome per le due icone ma dobbiamo usare un rieticchetamento con "as", il codice diverrà:
+    
         /* import specific icons */
         import { faUserSecret as faUserSecretSolid } from '@fortawesome/free-solid-svg-icons'
 
@@ -72,7 +72,7 @@
 
         /* add icons to the library */
         library.add(faUserSecretSolid, faUserSecretRegular)
-    </code>
+    
 
 6. Nelle righe di codice:
     
@@ -84,11 +84,11 @@
         
 
 7. Dobbiamo modificare il nome delle icone all'interno delle parentesi con il nome delle icone che vogliamo usare di fontawesome, con l'esempio dle codice sopra stiamousando l'icona "fa-user-secret" Se vogliamo usare l'icona della lente d'inngradimento scriveremo: 
-    <code>
+    
         /* import specific icons */
         import { faUserSecret, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons' 
         /* add icons to the library */
         library.add(faUserSecret, faMagnifyingGlass)
-    </code>
+    
 
-9. Per utilizzare nel codice del componente l'icona dobiamo inserirle con il codice di fontawesome in stile componente
+8. Per utilizzare nel codice del componente l'icona dobiamo inserirle con il codice di fontawesome in stile componente
