@@ -39,50 +39,57 @@
         npm i --save @fortawesome/free-brands-svg-icons
     </code>
 
-3. ``` npm i --save @fortawesome/vue-fontawesome@latest-2
+3. ``` npm i --save @fortawesome/vue-fontawesome@latest-2 ```
+
 4. Aprire poi il file main.js e scrivere all'interno:
-    ```
-    /* import the fontawesome core */
-    import { library } from '@fortawesome/fontawesome-svg-core'
+    <code>
+        /* import the fontawesome core */
+        import { library } from '@fortawesome/fontawesome-svg-core'
 
-    /* import font awesome icon component */
-    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+        /* import font awesome icon component */
+        import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-    /* import specific icons */
-    import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
-    /*Import icone regular */
-    import { faFaceSmile } from '@fortawesome/free-regular-svg-icons'
+        /* import specific icons */
+        import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+        /*Import icone regular */
+        import { faFaceSmile } from '@fortawesome/free-regular-svg-icons'
 
-    /* add icons to the library */
-    library.add(faUserSecret)
+        /* add icons to the library */
+        library.add(faUserSecret)
 
-    /* add font awesome icon component */
-    Vue.component('font-awesome-icon', FontAwesomeIcon)
+        /* add font awesome icon component */
+        Vue.component('font-awesome-icon', FontAwesomeIcon)
+    </code>
 
 5. ATTENZIONE: se la stessa icona viene importata con due stili diversi ad esempio: regular e solid,
    non possiamo usare lo stesso nome per le due icone ma dobbiamo usare un rieticchetamento con "as", il codice diverrà:
-    ```
-    /* import specific icons */
-    import { faUserSecret as faUserSecretSolid } from '@fortawesome/free-solid-svg-icons'
+    <code>
+        /* import specific icons */
+        import { faUserSecret as faUserSecretSolid } from '@fortawesome/free-solid-svg-icons'
 
-    /*Import icone REGULAR */
-    import { faUserSecret as faUserSecretRegular } from '@fortawesome/free-regular-svg-icons'
+        /*Import icone REGULAR */
+        import { faUserSecret as faUserSecretRegular } from '@fortawesome/free-regular-svg-icons'
 
-    /* add icons to the library */
-    library.add(faUserSecretSolid, faUserSecretRegular)
+        /* add icons to the library */
+        library.add(faUserSecretSolid, faUserSecretRegular)
+    </code>
 
 6. Nelle righe di codice:
-    ```
-    /* import specific icons */
-    import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
+    <code>
+        /* import specific icons */
+        import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
 
-    /* add icons to the library */
-    library.add(faUserSecret)
+        /* add icons to the library */
+        library.add(faUserSecret)
+    </code>
 
-Dobbiamo modificare il nome delle icone all'interno delle parentesi con il nome delle icone che vogliamo usare di fontawesome, con l'esempio dle codice sopra stiamousando l'icona "fa-user-secret" Se vogliamo usare l'icona della lente d'inngradimento scriveremo: ``` /* import specific icons */ import { faUserSecret, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+7. Dobbiamo modificare il nome delle icone all'interno delle parentesi con il nome delle icone che vogliamo usare di fontawesome, con l'esempio dle codice sopra stiamousando l'icona "fa-user-secret" Se vogliamo usare l'icona della lente d'inngradimento scriveremo: 
+    <code>
+        /* import specific icons */
+        import { faUserSecret, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons' 
 
-/* add icons to the library */
-library.add(faUserSecret, faMagnifyingGlass)
+        /* add icons to the library */
+        library.add(faUserSecret, faMagnifyingGlass)
+    </code>
 
-
-- Per utilizzare nel codice del componente l'icona dobiamo inserirle con il codice di fontawesome in stile componente:
+9. Per utilizzare nel codice del componente l'icona dobiamo inserirle con il codice di fontawesome in stile componente
