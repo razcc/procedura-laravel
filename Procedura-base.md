@@ -128,26 +128,25 @@
 
 ## SHOW BASE (NO Crud, NO Controller)
 1. Creo un rotta in web.php dedicata:
-    ```
-    Route::get('/prodotti/{key}', function($key){
+    
+        Route::get('/prodotti/{key}', function($key){
 
-        //Prendo i dati da config
-        $pasta = config('pasta');
+            //Prendo i dati da config
+            $pasta = config('pasta');
 
-        if( is_numeric($key) && $key >= 0 && $key < count($pasta) ){
-            $prodotto_singolo = $pasta[$key];
-        } else {
-            abort(404);
-        }
+            if( is_numeric($key) && $key >= 0 && $key < count($pasta) ){
+                $prodotto_singolo = $pasta[$key];
+            } else {
+                abort(404);
+            }
 
-        // dd($prodotto_singolo);
+            // dd($prodotto_singolo);
 
-        return view('pages.show', compact('prodotto_singolo'));
-    })->name('show.pasta');
+            return view('pages.show', compact('prodotto_singolo'));
+        })->name('show.pasta');
 
 2. Per ogni elemento stampato dal ciclo foreach, creo un link che richiami la rotta della singola pagina e che passi il dato univoco che permetterà di recuperare il record:
-    ```
-    <a href="{{ route('show.pasta', compact('key') ) }}">
+        <a href="{{ route('show.pasta', compact('key') ) }}">
 
 3. Creo la view che stamperà i dati del singolo record creato: "views/pages/show.blade.php"
     ```
