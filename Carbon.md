@@ -7,7 +7,7 @@
 3. Nel posto dove voglio usare carbon uso:
    ```  use Carbon\Carbon; ```
 
-<!--! TIMEZONE fuso Orario -->
+### Primo Metodo
 4. Andiamo nella cartella confic in app.php, cerchiamo timezone, e modifichiao da UTC a Europe/Rome 
     ``` 'timezone' => 'Europe/Rome', ```
 
@@ -15,13 +15,13 @@
         https://www.w3schools.com/php/php_ref_timezones.asp#europe
 
 6. Dopo aver modificato un fiile nella cartella confiuc bisogna ripulire la cache
-    <!-- php artisan config:clear -->
+    ``` php artisan config:clear ```
 
-7. Secondo metodo di modifica della timeZone
+### Secondo Metodo
 8. Anziche modificare direttamente la timeZone del file app.php della cartella config, al suo interno creiamo un collegamento al file .env      
 
-    <!-- 'timezone' => 'env('APP_TIMEZONE', 'UTC')', -->
-    Primo parametro serve a dire cosa deve cercare nel file .env,il secondo è cosa deve applicare nel caso nel .env non ci sia niente
+    ``` 'timezone' => 'env('APP_TIMEZONE', 'UTC')', ```
+    //Primo parametro serve a dire cosa deve cercare nel file .env,il secondo è cosa deve applicare nel caso nel .env non ci sia niente
 
 9.  Andare nel file .env e creare una nuova chiave il APP_TIMEZONE
     APP_TIMEZONE = 'Europe/Rome'
