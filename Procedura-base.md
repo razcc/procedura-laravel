@@ -146,7 +146,7 @@
         })->name('show.pasta');
 
 2. Per ogni elemento stampato dal ciclo foreach, creo un link che richiami la rotta della singola pagina e che passi il dato univoco che permetterà di recuperare il record:
-        <a href="{{ route('show.pasta', compact('key') ) }}">
+    ``` <a href="{{ route('show.pasta', compact('key') ) }}"> ```
 
 3. Creo la view che stamperà i dati del singolo record creato: "views/pages/show.blade.php"
     ```
