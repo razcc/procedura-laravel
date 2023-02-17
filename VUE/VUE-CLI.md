@@ -12,10 +12,10 @@
     ``` npm install bootstrap@5.2.3 ```
 
 2. All'interno del file 📃"main.js" scrivo i due codici:
-    <code> 
+        ```  CODICE  ```
         import 'bootstrap/dist/css/bootstrap.min.css' 
         import 'bootstrap/dist/js/bootstrap.min.js' 
-    </code>
+    
 
 ## AXIOS
 1. 
@@ -32,17 +32,16 @@
 1. 
     ``` npm i --save @fortawesome/fontawesome-svg-core ```
 
-2. 
-   <code>
+2. ```  CODICE  ```
         npm i --save @fortawesome/free-solid-svg-icons   
         npm i --save @fortawesome/free-regular-svg-icons 
         npm i --save @fortawesome/free-brands-svg-icons
-    </code>
+    
 
 3. ``` npm i --save @fortawesome/vue-fontawesome@latest-2 ```
 
 4. Aprire poi il file main.js e scrivere all'interno:
-    <code>
+        ```  CODICE  ```
         /* import the fontawesome core */
         import { library } from '@fortawesome/fontawesome-svg-core'
 
@@ -59,11 +58,11 @@
 
         /* add font awesome icon component */
         Vue.component('font-awesome-icon', FontAwesomeIcon)
-    </code>
+    
 
 5. ATTENZIONE: se la stessa icona viene importata con due stili diversi ad esempio: regular e solid,
 non possiamo usare lo stesso nome per le due icone ma dobbiamo usare un rieticchetamento con "as", il codice diverrà:
-    
+        ```  CODICE  ```
         /* import specific icons */
         import { faUserSecret as faUserSecretSolid } from '@fortawesome/free-solid-svg-icons'
 
@@ -75,7 +74,7 @@ non possiamo usare lo stesso nome per le due icone ma dobbiamo usare un rieticch
     
 
 6. Nelle righe di codice:
-    
+        ```  CODICE  ```
         /* import specific icons */
         import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
         
@@ -84,7 +83,7 @@ non possiamo usare lo stesso nome per le due icone ma dobbiamo usare un rieticch
         
 
 7. Dobbiamo modificare il nome delle icone all'interno delle parentesi con il nome delle icone che vogliamo usare di fontawesome, con l'esempio dle codice sopra stiamousando l'icona "fa-user-secret" Se vogliamo usare l'icona della lente d'inngradimento scriveremo: 
-    
+        ```  CODICE  ```
         /* import specific icons */
         import { faUserSecret, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons' 
         /* add icons to the library */
