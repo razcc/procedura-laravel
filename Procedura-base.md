@@ -46,8 +46,7 @@
     ``` npm i npm install bootstrap ```
     ``` npm i @popperjs/core ```
 3. Aprire il file 📃app.scss e inserire:
-    ```
-    @import '~bootstrap/dist/css/bootstrap.min.css';
+    ``` @import '~bootstrap/dist/css/bootstrap.min.css'; ```
 
 4. Andare nel file app.js nella cartella resources e inserire:
     ```
