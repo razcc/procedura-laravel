@@ -13,8 +13,8 @@
 
 2. All'interno del file 📃"main.js" scrivo i due codici:
 ```  CODICE  ```
-        import 'bootstrap/dist/css/bootstrap.min.css' 
-        import 'bootstrap/dist/js/bootstrap.min.js' 
+            import 'bootstrap/dist/css/bootstrap.min.css' 
+            import 'bootstrap/dist/js/bootstrap.min.js' 
     
 
 ## AXIOS
