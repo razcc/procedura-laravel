@@ -42,9 +42,9 @@
 ## Bootstrap
 1. Lanciare il comando se non ancora fatto: <br>
     ```npm i ```
-2. Poi:
-    ```npm i npm install bootstrap
-    ``` npm i @popperjs/core
+2. Poi: <br>
+    ``` npm i npm install bootstrap ```
+    ``` npm i @popperjs/core ```
 3. Aprire il file 📃app.scss e inserire:
     ```
     @import '~bootstrap/dist/css/bootstrap.min.css';
