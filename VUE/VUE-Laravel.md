@@ -31,6 +31,7 @@
         })->where("any", ".*");
 
 10. Modifico il file: 📁RouteServiceProvider.php in: public const HOME = '/admin';
+
 11. Modifico il nuovo home controller, percorso 📁Admin/HomeController, in:
 
     ```
