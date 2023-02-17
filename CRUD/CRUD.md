@@ -1,183 +1,195 @@
-DA CHIEDERE A COSA SERVED il with nel update function durante il redirect
 
 ## CRUD
 
-1. Per gestire le Crud ci serve un Controller Risorsa, all'interno di 📁app/Http/Controllers/Admin/ControllerRisorsa.php
-    ``` php artisan make:controller Admin/PostsController -r  
+1. Per gestire le Crud ci serve un Controller Risorsa, all'interno di 📁app/Http/Controllers/Admin/ControllerRisorsa.php <br>
+    ``` php artisan make:controller Admin/PostsController -r  ```
+
 2. In 📃web.php, aggiungere la Route per il controller risorsa, dentro al gruppo rotte degli Admin:
-    ```
-    Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
-        Route::get('/', 'HomeController@index')->name('index');
 
-        //CONTROLLER RISORSA
-        Route::resource('/posts', postsController::class); 
+        Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
+            Route::get('/', 'HomeController@index')->name('index');
 
-        Opure
+            //CONTROLLER RISORSA
+            Route::resource('/posts', postsController::class); 
 
-    });
+            Opure
+
+        });
+
 3. Creare la strutturain cartelle nelle views 📁
-    ```
-    resources/views/admin/post/ index.blade.php
-                                show.blade.php
-                                create.blade.php
-                                edit.blade.php
+
+        resources/views/admin/post/ index.blade.php
+                                    show.blade.php
+                                    create.blade.php
+                                    edit.blade.php
+
 4. Lanciare i comandi per creare il Model migration e seeder
 
 5. Creare la struttura della tabella nella Migration
 
-6. Se si vuole rieomire la tabaella nel DB, andare nell seeder, nella function run.
--Se si vogliono dati veloci e limitati in numero creiamo un array multidimensionale direttamente dentro la funzione run
+6. Se si vuole rieompire la tabaella nel DB, andare nell seeder, nella function run.
+- Se si vogliono dati veloci e limitati in numero creiamo un array multidimensionale direttamente dentro la funzione run
 
-    public function run()
-    {
-        $var = [
-            'elem1',
-            'elem2'
-        ];
+        public function run()
+        {
+            $var = [
+                'elem1',
+                'elem2'
+            ];
 
-        foreach($var as $elem){
-            $newVar = new NomeModel();
-            $newVar->NomeColonnaTabella = $elem;
-            $newVar->NomeColonnaTabella = $elem;
-            $newVar->save();
+            foreach($var as $elem){
+                $newVar = new NomeModel();
+                $newVar->NomeColonnaTabella = $elem;
+                $newVar->NomeColonnaTabella = $elem;
+                $newVar->save();
+            }
         }
-    }
--Se si vogliono gestire degli array con una gran quantità di dati si puo decidere di inserire questo array dentro un file .php all'interno della cartella config per poi richiamare i dati con una funzione specifica chiamata config
-    ```
-    public function run()
-    {
-        $var = config('fileDati');
+- Se si vogliono gestire degli array con una gran quantità di dati si puo decidere di inserire questo array dentro un file .php all'interno della cartella config per poi richiamare i dati con una funzione specifica chiamata config
 
-        foreach($var as $elem){
-            $newVar = new NomeModel();
-            $newVar->NomeColonnaTabella = $elem['chiaveArray'];
-            $newVar->NomeColonnaTabella = $elem['chiaveArray'];
-            $newVar->save();
-        };
-    }
--Ultimo metodo su puo usare FAKER php, per chreare dati fittizi nella tabella
+        public function run()
+        {
+            $var = config('fileDati');
 
-7. ``` php  artisan db:seed --class=Nomeseeder
+            foreach($var as $elem){
+                $newVar = new NomeModel();
+                $newVar->NomeColonnaTabella = $elem['chiaveArray'];
+                $newVar->NomeColonnaTabella = $elem['chiaveArray'];
+                $newVar->save();
+            };
+        }
+- Ultimo metodo su puo usare FAKER php, per chreare dati fittizi nella tabella
+
+7. ``` php  artisan db:seed --class=Nomeseeder ```
 
 
 ## FAKER PHP
-1. ``` composer remove fzaninotto/faker 
-2. ``` composer require fakerphp/faker  
-3. Nel file seed su cui si vuole usare il faker, usare l'importazione 
-    ```use Faker\Generator as Faker;
-4. Importare il modello
-    ``` use App\Models\NomeModello;
-5. Usare la seguente funzione run
-    ```
-    public function run(Faker $faker)
-    {
-        for ($i = 0; $i < 15; $i++){
-            $newPost = new nomdeModello();
-            $newPost->NomeColonna = $faker->name();
-            $newPost->NomeColonna = $faker->paragraph();
-            $newPost->save();
-        }
-    }
+1. ``` composer remove fzaninotto/faker ```
 
-6. ``` php  artisan db:seed --class=Nomeseeder
+2. ``` composer require fakerphp/faker ```
+
+3. Nel file seed su cui si vuole usare il faker, usare l'importazione <br>
+    ```use Faker\Generator as Faker; ```
+
+4. Importare il modello <br>
+    ``` use App\Models\NomeModello; ```
+
+5. Usare la seguente funzione run
+
+        public function run(Faker $faker)
+        {
+            for ($i = 0; $i < 15; $i++){
+                $newPost = new nomdeModello();
+                $newPost->NomeColonna = $faker->name();
+                $newPost->NomeColonna = $faker->paragraph();
+                $newPost->save();
+            }
+        }
+
+6. ``` php  artisan db:seed --class=Nomeseeder ```
 
 ## INDEX
-1. Inserire nella homepage o navBar il link che porta alla pagina index, la route da inserire la si trova nella route:list
-    ``` <a href="{{ route('admin.posts.index') }}">Posts</a>
+1. Inserire nella homepage o navBar il link che porta alla pagina index, la route da inserire la si trova nella route:list <br>
+    ``` <a href="{{ route('admin.posts.index') }}">Posts</a> ```
 
 2. Creare la struttura del index.blade.php, estendendo il layut
-3. Andare nel Controller Risorse, nella funzione index, e creare la logica per passare i dati da ciclare alla pagina
-e fare il return diella view index
-    ```
-    public function index()
-    {
-        $posts = Post::All();
-        return view('admin.post.index', compact('posts'));
-    }
 
-4. Andare nella pagina index.blade.php e creare il ciclo per stapare a schermo tutti i dati ricevitu tramite il compact dal controller
+3. Andare nel Controller Risorse, nella funzione index, e creare la logica per passare i dati da ciclare alla pagina e fare il return diella view index
+
+        public function index()
+        {
+            $posts = Post::All();
+            return view('admin.post.index', compact('posts'));
+        }
+
+4. Andare nella pagina index.blade.php e creare il ciclo per stapare a schermo tutti i dati ricevuti tramite il compact dal controller
 
 ## PAGINATE
 1. Nella function index del controller risorsa
-    ```
-    public function index()
-    {
-        $posts = Post::paginate(10);
 
-        return view('admin.post.index', compact('posts'));
-    }
-2. Nella pagina view dovre avro la pagination in fondo a tutto il contentuo che sara inpaginato:
-    ``` {{ $nomeVariabilePassataConCompact->links() }}
+        public function index()
+        {
+            $posts = Post::paginate(10);
+
+            return view('admin.post.index', compact('posts'));
+        }
+
+2. Nella pagina view dovre avro la pagination in fondo a tutto il contentuo che sara inpaginato: <br>
+    ``` {{ $nomeVariabilePassataConCompact->links() }} ```
 
 
 ## SHOW
-1. Creare il link sul singol elemto, quindi dentro al ciclo,  nella pagina index, nella route del href, inserire, oltre al name indicatio della pagina show (riferirsi alla route.list), anche l'id del singolo elemto su cui si mette il link
-    ```
-    <a href=" {{ route('admin.posts.show', $post['id']) }}">
-        {{ $post['title'] }}
-    </a>
-2. Nella Function Show del Controller Risorsa, riportarsi l'intero recordo col modello, associato alla funzione findOrFail($id), poi fare il return della pagina show, e il compact del singolo elemento salvato
-    ```
-    public function show($id)
-    {
+1. Creare il link sul singol elemto, quindi dentro al ciclo,  nella pagina index, nella route del href, inserire, oltre al name indicatio della pagina show (riferirsi alla route.list), anche l'id del singolo elemto su cui si mette il link: <br>
 
-        $singolo_post = Post::findorFail($id);
-        
-        return view('admin.post.show', compact('singolo_post'));
-    }
+    ``` <a href=" {{ route('admin.posts.show', $post['id']) }}"> {{ $post['title'] }} </a> ```
+
+2. Nella Function Show del Controller Risorsa, riportarsi l'intero recordo col modello, associato alla funzione findOrFail($id), poi fare il return della pagina show, e il compact del singolo elemento salvato
+
+        public function show($id)
+        {
+
+            $singolo_post = Post::findorFail($id);
+            
+            return view('admin.post.show', compact('singolo_post'));
+        }
+
 3. Nella pagina show stampare il dato ricevuto dal Controller Risorsa
 
 ## CREATE
 1. Creare link per andare alla pagine di creazione post
-    ``` <a href="{{ route('admin.posts.create') }}">Create Post</a>
+    ``` <a href="{{ route('admin.posts.create') }}"> Create Post </a> ```
 
 2. Andare nella view create.blade.php, estendere il layoute e creare un Form per il riempimento dei dati da parte dell'utente per creare un buovo post
-    a- Da inserire nel tag form: <!--!    method="POST" action="{{route('admin.posts.store')}}"     -->    
-    b- Primo elemento suito dopo l'apertura del tag form: <!--!   @csrf     -->
-    C- Ogni input deve avere l'attributo name che corrispode al nome della colonna che andra a riempire nel Db:           <!--!  name="NomeColonna" -->
+    - Da inserire nel tag form: <br>
+        ```    method="POST" action="{{route('admin.posts.store')}}" ```   
+    - Primo elemento suito dopo l'apertura del tag form: <br>
+        ``` @csrf ```>
+    - Ogni input deve avere l'attributo name che corrispode al nome della colonna che andra a riempire nel Db:     <br>      
+        ``` name="NomeColonna" ```
+
 3. Nel controller risorse, nella function create, fare la return della view create
 4. Compilare la SOTORE
 
 
 ## STORE
 1. Nel controller risorsa, fuunction store, Salvare in una variabile tutti i valori inviati dal form, tramite parameto request della funzione store, abbinaa a funzione propria di laravel all();
-    ```
-    public function store(Request $request)
-    {
-        $var = $request->all();
-    }
 
-2. Metodo1:     Creo nuovo record, e compilo una per una le colonne della tabella, direttamente nella function store.
-    ```
-    public function store(Request $request)
-    {
-        $var = $request->all();
+        public function store(Request $request)
+        {
+            $var = $request->all();
+        }
 
-        $new_record = new Post();
+2. METODO 1:  <br>
+Creo nuovo record, e compilo una per una le colonne della tabella, direttamente nella function store.
 
-        $new_record->NomeColonna = $var['nomeColonnaPresaDalnameDelTaginputPassatoDallaRquestSopraAllaVar'];
-        $new_record->NomeColonna = $var['nomeColonnaPresaDalnameDelTaginputPassatoDallaRquestSopraAllaVar'];
-        $new_record->save();
-    }
+        public function store(Request $request)
+        {
+            $var = $request->all();
 
-3. Metodo 2:    Creo nuovo record, e uso la funzione fill con parametro la variabile con i dati. Questo è possibile se prima vado nel modello che controlla questa specifica tabella su cui sto lavorando e gli aggiungo il protected fillable: 
-    
-    ```
-    <!--!  Espressione da mettere nel modello:               -->
-             protected $fillable = [
-                'NomeColonna1',
-                'NomeColonna2'
-            ];
-    <!--! Espressione da mettere nel controllere store:     -->
-            public function store(Request $request)
-            {
-                $var = $request->all();
-                $new_record = new Post();
-                $new_record->fill($var);
-                $new_record->save();
-            }
+            $new_record = new Post();
 
-4. FAccio il redirect, quando l'utente clicca submit, non andra ad una efetiva pagina store, ma verra diretto a una pagina a mia scelta per esempio la index con tutti i post
+            $new_record->NomeColonna = $var['nomeColonnaPresaDalnameDelTaginputPassatoDallaRquestSopraAllaVar'];
+            $new_record->NomeColonna = $var['nomeColonnaPresaDalnameDelTaginputPassatoDallaRquestSopraAllaVar'];
+            $new_record->save();
+        }
+
+3. METODO 2:  <br>
+Creo nuovo record, e uso la funzione fill con parametro la variabile con i dati. Questo è possibile se prima vado nel modello che controlla questa specifica tabella su cui sto lavorando e gli aggiungo il protected fillable: 
+
+    - Espressione da mettere nel modello
+        protected $fillable = [
+            'NomeColonna1',
+            'NomeColonna2'
+        ];
+    - Espressione da mettere nel controllere store: 
+        public function store(Request $request)
+        {
+            $var = $request->all();
+            $new_record = new Post();
+            $new_record->fill($var);
+            $new_record->save();
+        }
+
+1. FAccio il redirect, quando l'utente clicca submit, non andra ad una efetiva pagina store, ma verra diretto a una pagina a mia scelta per esempio la index con tutti i post
     ``` return redirect()->route('admin.posts.index');
 
 ## VALIDATION (durante la fase di creazione)
