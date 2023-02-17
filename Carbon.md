@@ -24,28 +24,26 @@
     //Primo parametro serve a dire cosa deve cercare nel file .env,il secondo è cosa deve applicare nel caso nel .env non ci sia niente
 
 9.  Andare nel file .env e creare una nuova chiave il APP_TIMEZONE
-    APP_TIMEZONE = 'Europe/Rome'
+    ``` APP_TIMEZONE = 'Europe/Rome' ```
 
 
 
 10. Comando per resettare le date preesistenti su php my admin: 
-    <!-- php artisan migrate:refresh --seed  -->
+    ``` php artisan migrate:refresh --seed  ```
 
 
 ## Usiamo carbon
-1. Nel modello giusto, usiamo cartbon, importarlo
+1. Nel modello giusto, usiamo carbon, importandolo
 
 2. Creare una funzione custom, che useremo in pagina view, quando voremmo stampare una data
 
-    public function getFormattedDate($nomeColonna, $tipoFormattazione){
+        public function getFormattedDate($nomeColonna, $tipoFormattazione){
 
-        return Carbon::create( $this->$nomeColonna )-> format($tipoFormattazione)
-    }
+            return Carbon::create( $this->$nomeColonna )-> format($tipoFormattazione)
+        }
 
 3. Quando voglio stampare nella index, richiamo la funzione passando come parametro, il nome della colonna che voglio formattare, e il tipo di formattazione, sotto forma di stringa ('d-m-y h:i:s')
 
-const no[1] = 'cares';
-    Work.harder();
 
 
 
