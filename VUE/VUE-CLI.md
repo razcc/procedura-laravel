@@ -81,7 +81,7 @@
     
         /* add icons to the library */
         library.add(faUserSecret)
-    </code>
+    
 
 7. Dobbiamo modificare il nome delle icone all'interno delle parentesi con il nome delle icone che vogliamo usare di fontawesome, con l'esempio dle codice sopra stiamousando l'icona "fa-user-secret" Se vogliamo usare l'icona della lente d'inngradimento scriveremo: 
     <code>
