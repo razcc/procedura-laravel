@@ -1,5 +1,4 @@
 ## Progetto VUE CLI
-***
 1. Creare una repository vuota su github
 2. Clonarla sul pc con vs code
 
@@ -26,12 +25,13 @@
 
 ## FONTAWESOME
 Tutti i comandi sono presetni nell documentazione di fA
-1. ``` npm i --save @fortawesome/fontawesome-svg-core ```
+1. 
+    ``` npm i --save @fortawesome/fontawesome-svg-core ```
 
 2. 
-```    npm i --save @fortawesome/free-solid-svg-icons      ```
-```    npm i --save @fortawesome/free-regular-svg-icons    ```
-```    npm i --save @fortawesome/free-brands-svg-icons     ```
+   ``` npm i --save @fortawesome/free-solid-svg-icons   
+    npm i --save @fortawesome/free-regular-svg-icons 
+    npm i --save @fortawesome/free-brands-svg-icons  ```
 
 3. ``` npm i --save @fortawesome/vue-fontawesome@latest-2
 4. Aprire poi il file main.js e scrivere all'interno:
