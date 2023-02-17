@@ -75,10 +75,10 @@
     </code>
 
 6. Nelle righe di codice:
-    <code>
+    
         /* import specific icons */
         import { faUserSecret } from '@fortawesome/free-solid-svg-icons'
-    <code>
+    
         /* add icons to the library */
         library.add(faUserSecret)
     </code>
