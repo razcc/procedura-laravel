@@ -34,15 +34,15 @@
 
 11. Modifico il nuovo home controller, percorso 📁Admin/HomeController, in:
 
-    ```
-    class HomeController extends Controller
-    {
-        // pagina di atterraggio dopo il login
-        public function index()
+    
+        class HomeController extends Controller
+
         {
-            return view('admin.home');
+            // pagina di atterraggio dopo il login
+            public function index(){
+                    return view('admin.home');
+                }
         }
-    }
 
 12. Creiamo il file home.blade per la pagina di frontoffice in questo percorso: 📁"resources/views/guest/home.blade.php"
     struttura tipo:
