@@ -11,8 +11,11 @@
 1. 
     ``` npm install bootstrap@5.2.3 ```
 2. All'interno del file 📃"main.js" scrivo i due codici:
-    ``` import 'bootstrap/dist/css/bootstrap.min.css' ```
-    ```import 'bootstrap/dist/js/bootstrap.min.js' ```
+    <code> 
+        import 'bootstrap/dist/css/bootstrap.min.css' 
+        <br>
+        import 'bootstrap/dist/js/bootstrap.min.js' 
+    </code>
 
 ## AXIOS
 1. 
