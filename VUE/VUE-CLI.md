@@ -12,7 +12,7 @@
     ``` npm install bootstrap@5.2.3 ```
 
 2. All'interno del file 📃"main.js" scrivo i due codici:
-    ```  CODICE  ```
+```  CODICE  ```
         import 'bootstrap/dist/css/bootstrap.min.css' 
         import 'bootstrap/dist/js/bootstrap.min.js' 
     
