@@ -3,13 +3,13 @@
 ## GIT
 1. ``` composer create-project --prefer-dist laravel/laravel:^7.0 [NOME PROGETTO] ```
 2. Collegamento a GIT
-    
+
         git add -A 
         git commit -m " Testo del commit " 
         git branch -M main
         git remote add origin .........URL DELLA REPO........
         git push -u origin main
-    
+
 ## SASS
 1. ``` npm i ```
 2. ``` npm run dev ```
